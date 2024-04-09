@@ -1,0 +1,131 @@
+ES6 မှာ variable declare ရင် let & var ကိုအဓိကသုံးပြီး delcare ပြီးရင်တန်ဖိုးပြောင်းလို့မရတဲ့ const ရယ်ဆိုပြီးရှိတယ်။
+global scope မှာ var နဲ့ let ၂ခုလုံးက သူတို့တန်ဖိုးတွေကို ပြောင်းလို့ပြင်လို့ရတယ်။
+
+let က global scope မှာရော local scope မှာပါ သူပေးထားတဲ့တန်ဖိုးအတိုင်းတည်မြဲတယ်။ 
+ပြောင်းတဲ့တန်ဖိုး ၂ခုရှိရင် ၂ခုအတိုင်း ၃ခုရှိရင် ၃ခုအတိုင်း ထွက်တယ်။
+
+var က global scope ဖြစ်စေ local scope ဖြစ်စေ နောက်ဆုံးပေးလိုက်တဲ့တန်ဖိုးအတိုင်းပဲထွက်တယ်။
+
+--------------------------------------------------------------------------------------
+// Variable Types
+
+block scope တစ်ခုထဲရောက်နေရင် let နဲ့‌ declare ထားတဲ့variableတစ်ခုက local scope အတွင်းမှာပဲသက်ရောက်မှုရှိမယ်။
+scope block value ကတစ်ခုသက်သက် global declare ထားတဲ့ value ကတစ်ခုသက်သက်ထွက်မယ်။
+
+block scope တစ်ခုထဲရောက်နေရင် var နဲ့ declare ထားတဲ့variableတစ်ခုကို 
+local scope အတွင်းမှာ declareထားတဲ့ variable value အတိုင်း override လုပ်သွားမယ်။
+
+အားသာချက် - var ကိုသုံးရင် နာမည်တူတဲ့ variable တွေအများကြီးသုံးလို့ရသွားမယ်။ သူတို့ရဲ့valueတွေတော့တူမှာမဟုတ်ဘူး။
+       - let keyword ကိုသုံးရင် သက်ဆိုင်ရာ scope တစ်ခုကနေပဲူခေါ်သုံးလို့ရမယ်။
+
+Const နဲ့ declare ထားတဲ့ variableကို Global & Block Scope တွေမှာ ပြောင်းလို့ပြင်လို့မရဘူး။ 
+Block Scope တစ်ခုထဲထည့်လိုက်ပြီး အပြင်ဘက်မှာရှိတဲ့Global valueကို 
+Block Scopeအတွင်းကနေ variable nameအတူတူပေးပြီး valueပြင်လို့ရတယ်။
+
+====================================================================================== // Arrow Function // 
+
+const/let/var-keyword function = (parameter, parameter) => console.log(parameter,parameter);
+function(parameter-value,parameter-value);
+
+
+// This Keyword //
+Object တစ်ခုဆောက်ပြီး အထဲမှာFunctionရေးမယ်။ ပုံမှန် console.log ထောက်ခေါ်မယ်ဆိုရင် ObjectName.key နဲ့ခေါ်ရမယ်။
+
+Object ထဲက Function ကို ခေါ်မယ်ဆိုရင်  Function ထဲမှာ this keyword သုံးပြီး console.logထုတ်ထားရမယ်။
+Object Scope အပြင်ကနေခေါ်မယ်ဆိုရင် Objectname.FunctionName နဲ့တန်းခေါ်လို့ရတယ်။
+
+====================================================================================== 
+// Rest Parameter //
+
+-> Use "...num" as parameter in function (Eg; function multi(...num){})
+-> Rest Parameter သုံးမယ်ဆိုရင် တခြားParameter တွေရဲ့အနောက်ဆုံးမှာပဲထားရမယ်။
+
+
+// Spread Operator //
+
+-> Use "...something" as spread operator 
+(Eg; let array = [1,2]; let fullarray = [...array. 3];)
+(Eg; let Object = {name: "a", age: 2}; let fullObj = {...Object,address: "Ygn"};)
+
+
+// Object Literal & Computed Properties //
+
+-> Object Literal သည် Object ထဲတွင်သာ အလုပ်လုပ်။
+-> Use "[]" Square Bracket for Computed Properties.
+-> Variable တွေကို Dynamic ဖြစ်အောင် [] ဒီကြားထဲမှာရေးရမယ်။
+
+====================================================================================== 
+// Destructing //
+
+-->Array Destructing -> Use [] for Array
+-->Declare new array list then equal to array which is for destructing properties.
+
+
+-->Object Destructing -> Use {} for Object
+-->Declare new object then equal to object which is for destructing properties.
+
+
+// Template String //
+
+--> Use "+" Sign to join string with variable value.
+(Eg; "I am " + name + "age is " + age) -> name and age is variable.
+
+--> Use "${}" to join string with variable value and 
+    string must be in the [`] backtick. 
+(Eg; `My name is ${name} and I'm ${age} years old.`)
+
+
+// For in & of Loop //
+
+--> For In Loop -> Output Result is Index number 
+(Eg; 0,1,2,...)
+
+--> For Of Loop -> Output Result is Value 
+(Eg; variable value such as red, yellow,....)
+
+====================================================================================== 
+// Js Class & Static Extends //
+
+--> Class = Super Object (Eg; class Person{})
+--> Class နဲ့ Constructor တွေက သူ့ဘာသာအလုပ်မလုပ်ဘူး။ အလုပ်လုပ်ဖို့အတွက် instant လုပ်ပေးရမယ်။
+--> Class-based Constructor ဆောက်ပြီးတိုင်း Instant လုပ်ဖို့ Object ဆောက်ပြီးပြန်ခေါ်သုံးရမယ်။
+--> Constructor မှာ Parameter ပေးလို့ရတယ်။
+
+--> Static method ကို instant လုပ်ပြီးခေါ်စရာမလို။ Class name ကနေ dot ထောက်ပြီး တိုက်ရိုက်ခေါ်သုံးလို့ရတယ်။
+[Eg; <Class Name>.<Static Method> ->  Person.ShowName()]
+
+--> Classတစ်ခုကနေ တခြားClassတစ်ခုကို extendလုပ်တဲ့အခါ extendလုပ်မယ့်constructorထဲမှာ 
+super keywordနဲ့ Constructorထဲက Parameterကိုခေါ်ပေးရမယ်။
+
+ 
+// Module System //
+
+--> Fileတစ်ခုနဲ့တစ်ခုချိတ်ဆက်ပြီးအသုံးပြုတဲ့နေရာမှာသုံးတယ်။
+--> In file 1, export function-name()
+--> import {function-name} from './file 1';
+--> variable, function, arrow function တွေအားလုံးကိုexportလုပ်ပြီး importကနေပြန်သုံးလို့ရတယ်။
+--> import ထဲက name တူနေတာတွေရှိရင် "as" keyword ကိုသုံးပြီး renameလုပ်လို့ရ။
+
+
+// Default Export //
+
+--> export default keyword ကိုသုံးပြီး function ရေး။
+--> တခြားfileမှာimportလုပ်ရင် {} သုံးပြီးnameပြန်ရေးစရာမလိုတော့ပဲ custom nameတစ်ခုပေးပြီးပြန်သုံးနိုင်တယ်။
+--> export default keywordက fileတစ်ခုမှာ တစ်ခါပဲသုံးလို့ရမယ်။
+--> {} ထဲမှာမရှိနေရင် default လို့သတ်မှတ်။
+
+====================================================================================== 
+// Async Task //
+
+--> Tasksတွေ parallel runချင်တဲ့အချိန်မှာ အလုပ်လုပ်။ (Eg; ajax request, set timeout)
+--> အချိန်တစ်ခုစောင့်ရတဲ့အပိုင်းတွေပါလာရင် တခြားအလုပ်တွေကိုအရင်လုပ်ပြီးမှ async-taskတွေကို parallel runပြီး result ပြ။
+
+
+// Async Await//
+
+--> axios.get ကိုသုံးပြီး  json place holder က code ကို copy ယူပြီး result ထွက်/မထွက် စမ်း။
+--> axios.get က promise return ပြန်။
+--> async taskကိုအလုပ်လုပ်မယ့်functionအဖြစ် returnပြန်လာတဲ့promiseတွေကို await keywordနဲ့ရေးရမယ်။
+--> ထွက်လာတဲ့dataက global ပုံစံဖြစ်သွားပြီး ကြိုက်တဲ့နေရာကခေါ်သုံးလို့ရတယ်။ 
+
+
