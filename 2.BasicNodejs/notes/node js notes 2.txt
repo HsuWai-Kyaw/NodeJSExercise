@@ -1,0 +1,42 @@
+// File System Moduld in NodeJs - Sync Way //
+
+--> variableတစ်ခုdeclareပြီး require keywordကိုသုံး၊ ကြိုက်ရာmodule name သတ်မှတ်မယ်။
+<OR>
+--> import keyword နဲ့ local variable name၊ from keyword နောက်က module name တွေdeclareပြီးရေး။
+--> variable အသစ်ထဲကို အပေါ်မှာdeclareထားတဲ့ variablename.readFileSyne နဲ့ joinချင်တဲ့fileနာမည်ကိုရေးပေးရမယ်။
+--> ဘယ်လိုအခြေအနေမှာမဆို အစီအစဉ်ကျအတိုင်းအလုပ်လုပ်တယ်။
+--> Sync နဲ့ရေးထားတဲ့အပိုင်းနေရာရောက်ရင် runtime ကိုပြီးအောင်စောင့်ပြီးမှ ကျန်တဲ့အပိုင်းတွေကိုဆက်လုပ်တယ်။
+--> Use "readFileSyne" keyword
+
+
+// File System Moduld in NodeJs - Async Way //
+
+--> Asyncနဲ့ရေးထားတဲ့အပိုင်းတွေရဲ့ run time ကိုမစောင့်ပဲ တခြားအပိုင်းတွေကိုအရင်အလုပ်လုပ်ပြီးမှ Async နဲ့ရေးထားတဲ့အပိုင်းတွေကိုအလုပ်လုပ်တယ်။
+--> Use "readFile" keyword
+
+
+======================================================================================
+// Create Own HTTP Server //
+
+--> Use 'createServer" Keyword
+--> code update လုပ်တိုင်း node filename.js နဲ့အခါခါမrunရအောင် nodeကိုgloballyထည့်။
+--> npm install -g nodemon
+--> node filename.js အစား nodemon filename.js သုံး
+
+
+// Render HTML Doc //
+
+--> readFileကိုသုံးပြီး async wayနဲ့  fileလမ်းကြောင်းသတ်မှတ်ပြီးဖတ်မယ်။ 
+--> res.writeနဲ့ data ကိုခေါ်မယ်။ ပြီးရင် res.end လုပ်မယ်။
+
+
+// Static Web Page //
+
+--> Use req objects -> Eg; req.url, req.method, req.headers
+
+
+// Event Emitter //
+
+--> e.on('smth', arrow function)
+--> eventက သူ့ဟာနဲ့သူအလုပ်မလုပ်နိုင်တဲ့အတွက် emitလုပ်ပေးရမယ်။
+

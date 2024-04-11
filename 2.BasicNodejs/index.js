@@ -38,12 +38,140 @@
 
 // 5. HTTP Server
 // const server = require('http');
+// import server from 'http';
+// server.createServer((req, res) => {
+//     res.end('Port No: 3333 Run Test')
+// }).listen(3333, () => {
+//     console.log('Server Running on 3333 Port');
+// });
+
+
+// 6. Render HTML doc
+// import server from 'http';
+// import fs from 'fs';
+
+// server.createServer((req, res) => {
+//     fs.readFile('./page/index.html', (err, data) => {
+//         res.write(data);
+//         res.end();
+//     });
+// }).listen(3333, () => {
+//     console.log('Server Running');
+// });
+
+
+// 7. Static Web Page
+// import server from 'http';
+// import fs from 'fs';
+
+// server.createServer((req, res) => {
+//     // console.log(req.url);
+//     const url = req.url;
+//     console.log(req.method);
+//     if (url == "/") {
+//         fs.readFile('./page/index.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+//     else if (url == "/about") {
+//         fs.readFile('./page/about.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+//     else {
+//         fs.readFile('./page/contact.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+// }).listen(3333, () => {
+//     console.log('Server Running');
+// });
+
+
+// 9. Form Data //
+// import server from 'http';
+// import fs from 'fs';
+
+// server.createServer((req, res) => {
+//     // console.log(req.url);
+//     const url = req.url;
+//     // console.log(req.method);
+//     const method = req.method;
+
+//     // handle method from FORM
+//     if (method === 'POST' && url === '/') {
+//         console.log('Hi');
+//     }
+
+//     if (url == "/") {
+//         fs.readFile('./page/index.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+//     else if (url == "/about") {
+//         fs.readFile('./page/about.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+//     else {
+//         fs.readFile('./page/contact.html', (err, data) => {
+//             res.write(data);
+//             res.end();
+//         });
+//     }
+// }).listen(3333, () => {
+//     console.log('Server Running');
+// });
+
+
+// 10. Read Form Data
+
 import server from 'http';
-server.createServer((req, res) => { res.end('Port No: 3333 Run Test') }).listen(3333, () => { console.log('Server Running on 3333 Port'); });
+import fs from 'fs';
+import queryString from 'querystring';
 
+server.createServer((req, res) => {
+    const url = req.url;
+    const method = req.method;
 
+    // handle method from FORM
+    if (method === 'POST' && url === '/') {
+        // console.log('Hi');
+        let data = "";
+        req.on('data', d => {
+            // console.log(d.toString());
+            data += d;
+            console.log(queryString.parse(d));
 
+        });
+        req.end('end', () => {
+            console.log(data);
+        });
+    }
 
-
-
-
+    if (url == "/") {
+        fs.readFile('./page/index.html', (err, data) => {
+            res.write(data);
+            res.end();
+        });
+    }
+    else if (url == "/about") {
+        fs.readFile('./page/about.html', (err, data) => {
+            res.write(data);
+            res.end();
+        });
+    }
+    else {
+        fs.readFile('./page/contact.html', (err, data) => {
+            res.write(data);
+            res.end();
+        });
+    }
+}).listen(3333, () => {
+    console.log('Server Running');
+});
