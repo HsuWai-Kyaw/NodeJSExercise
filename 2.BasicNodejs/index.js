@@ -149,7 +149,7 @@ server.createServer((req, res) => {
             console.log(queryString.parse(d));
 
         });
-        req.end('end', () => {
+        req.on('end', () => {
             console.log(data);
         });
     }
@@ -175,3 +175,66 @@ server.createServer((req, res) => {
 }).listen(3333, () => {
     console.log('Server Running');
 });
+
+
+// import http from 'http';
+// import fs from 'fs';
+// import queryString from 'querystring';
+
+// http.createServer((req, res) => {
+//     const url = req.url;
+//     const method = req.method;
+
+//     // Handle POST request at root URL
+//     if (method === 'POST' && url === '/') {
+//         let data = '';
+//         req.on('data', d => {
+//             data += d; // Accumulate data d
+//         });
+
+//         req.on('end', () => {
+//             // Parse the accumulated data
+//             const parsedData = queryString.parse(data);
+//             console.log(parsedData);
+
+//             // Send a response
+//             res.writeHead(200, { 'Content-Type': 'text/plain' });
+//             res.end('Data received and parsed');
+//         });
+//     } else if (url === "/") {
+//         // Serve index.html for root URL
+//         fs.readFile('./page/index.html', (err, data) => {
+//             if (err) {
+//                 res.writeHead(404, { 'Content-Type': 'text/plain' });
+//                 res.end('File not found');
+//                 return;
+//             }
+//             res.writeHead(200, { 'Content-Type': 'text/html' });
+//             res.end(data);
+//         });
+//     } else if (url === "/about") {
+//         // Serve about.html for /about URL
+//         fs.readFile('./page/about.html', (err, data) => {
+//             if (err) {
+//                 res.writeHead(404, { 'Content-Type': 'text/plain' });
+//                 res.end('File not found');
+//                 return;
+//             }
+//             res.writeHead(200, { 'Content-Type': 'text/html' });
+//             res.end(data);
+//         });
+//     } else {
+//         // Serve contact.html for other URLs
+//         fs.readFile('./page/contact.html', (err, data) => {
+//             if (err) {
+//                 res.writeHead(404, { 'Content-Type': 'text/plain' });
+//                 res.end('File not found');
+//                 return;
+//             }
+//             res.writeHead(200, { 'Content-Type': 'text/html' });
+//             res.end(data);
+//         });
+//     }
+// }).listen(3333, () => {
+//     console.log('Server running on port 3333');
+// });
