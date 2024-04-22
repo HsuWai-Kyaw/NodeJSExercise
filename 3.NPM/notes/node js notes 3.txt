@@ -1,0 +1,37 @@
+// To generate JSON file //
+
+-npm init (information fill) / npm init -y (no need info)
+-test
+
+
+// Package Install //
+
+-npm install mysql (locally install)
+-npm uninstall mysql (For uninstall)
+
+======================================================================================
+// Yarn - Node Package Manager //
+
+- npm install -g yarn (OR) sudo npm install -g yarn [installation]
+- yarn -v [version check]
+
+- yarn add mysql [installation mysql]
+- yarn add express [express framework installation]
+
+- yarn remove express [uninstallation]
+
+=====================================================================================
+// Git Ignore //
+
+- New-Item .gitignore -ItemType file
+- echo $null >> .gitignore
+- echo "node_modules/" >> .gitignore
+
+- git reset HEAD node_modules
+- git rm -r --cached node_modules
+
+
+=====================================================================================
+
+
+======================================================================================
